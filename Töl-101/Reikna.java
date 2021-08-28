@@ -1,4 +1,4 @@
-/**
+/** 
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Búið til: 	2021-28-08 12:25:34
  * @ Lýsing:    Reiknar 4 mismunandi dæmi og skilar útkomum þeirra í streng sem er síðan prentaður í einni línu
