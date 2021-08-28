@@ -1,4 +1,4 @@
-/**
+/** 
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Búið til: 	2021-28-08 12:32:00
  * @ Lýsing:    Tekur inn tvö arguments, nafn og eftirnafn og prentar þau út sem Eftirnafn, Nafn
