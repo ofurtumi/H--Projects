@@ -1,0 +1,23 @@
+{
+    "java.project.sourcePaths": [
+        "Töl-101",
+        "Undirbúningur í Java"
+    ],
+    "autoHeader": {
+        "format": {
+            "startWith": "/**",
+            "middleWith": "*",
+            "endWith": "*/",
+            "headerPrefix": "@",
+        },
+        "header": {
+            "Höfundur": "\tÞorvaldur Tumi Baldursson",
+            "Búið til": {
+                "type": "createTime",
+                "format": "\tYYYY-DD-MM HH:mm:ss",
+            },
+            "Lýsing": "",
+        }
+       }
+}
+
