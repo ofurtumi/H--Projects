@@ -19,6 +19,9 @@
             },
             "Lýsing": "\t",
         }
-       }
+    },
+    "files.exclude": {
+        "**/*.class": true
+    }
 }
 
