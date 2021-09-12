@@ -12,12 +12,16 @@
         },
         "header": {
             "Höfundur": "\tÞorvaldur Tumi Baldursson",
+            "Netfang": "\tttb3@hi.is",
             "Búið til": {
                 "type": "createTime",
                 "format": "\tYYYY-DD-MM HH:mm:ss",
             },
-            "Lýsing": "",
+            "Lýsing": "\t",
         }
-       }
+    },
+    "files.exclude": {
+        "**/*.class": true
+    }
 }
 
