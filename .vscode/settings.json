@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "Undirbúningur í Java",
         "Töl-101",
-        "Undirbúningur í Java"
+        ""
     ],
     "autoHeader": {
         "format": {
@@ -22,6 +23,10 @@
     },
     "files.exclude": {
         "**/*.class": true
-    }
+    },
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "stdlib.jar"
+    ]
 }
 
