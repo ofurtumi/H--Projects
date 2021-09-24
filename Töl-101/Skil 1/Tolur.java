@@ -7,6 +7,6 @@
 
 public class Tolur {
     public static void main(String[] args) {
-        System.out.println("Hvað eru " + args[0] + " + " + args[1] + "?");
+        System.out.println("Hvað eru " + args[0] + " + " + args[1] + "?"); 
     }
 }
