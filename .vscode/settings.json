@@ -16,8 +16,9 @@
             "Netfang": "\tttb3@hi.is",
             "Búið til": {
                 "type": "createTime",
-                "format": "\tYYYY-DD-MM HH:mm:ss",
+                "format": "\tYYYY-DD-MM HH:mm",
             },
+            "Klárað": "\tYYYY-DD-MM HH:mm",
             "Lýsing": "\t",
         }
     },
