@@ -33,8 +33,14 @@ public class Hringir {
             //Myndirnar sem fylgja með og eru merktar b eru með rauðu hringjunum en a myndirnar teikna út
             //rétta mynd
 
-            if (h1 - r < x1 && h1 - r > x2 && h1 + r < x1 && h1 + r > x2) StdDraw.circle(h1, h2, r);
-            else if (h2 - r < y1 && h2 - r > y1 && h2 + r < y1 && h2 + r > y1) StdDraw.circle(h1, h2, r);
+            // if (h1 - r < x1 && h1 - r > x2 && h1 + r < x1 && h1 + r > x2) StdDraw.circle(h1, h2, r);
+            // else if (h2 - r < y1 && h2 - r > y1 && h2 + r < y1 && h2 + r > y1) StdDraw.circle(h1, h2, r);
+
+            if (h1+r>x1||h1+r<x2);
+            else if (h1-r>x1||h1-r<x2);
+            else if (h2+r>y1||h2+r<y2);
+            else if (h2-r>y1||h2-r<y2);
+            else StdDraw.circle(h1, h2, r);
             // else {
             //     StdDraw.setPenColor(StdDraw.RED);
             //     StdDraw.circle(h1, h2, r);
