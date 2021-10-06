@@ -3,6 +3,8 @@
 
 Verkefnaskilamappa til þess að dúndra drasli inn á gradescope. Allt hér inni er eftir mig, ekki stela þessu, notaðu það bara til þess að fá innblástur ef þú þarft
 --
+**J4F** eru verkefni sem voru gerð í tengingu við námsefni en eru bara til gamans
+
 **Töl-101** er verkefni í java fyrir Tölvunarfræði 1, þar er verkefnum skipt niður í skildæmi og tímadæmi
 
 **Undirbúningur** í java eru verkefni úr undirbúningsáfanga í java sem var kenndur fyrir áður en skólinn byrjaði, hægt er að finna glærur úr áfanganum þar líka

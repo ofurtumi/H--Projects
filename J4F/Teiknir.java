@@ -10,7 +10,7 @@ public class Teiknir {
         double y1 = 11.0;
         double y2 = 11.0;
 
-        ArrayList<Double> hnit = new ArrayList<Double>();
+        ArrayList < Double> hnit = new ArrayList<Double>();
         while (true) {
             if (StdDraw.isKeyPressed(KeyEvent.VK_1)) {
                 x1 = StdDraw.mouseX();
