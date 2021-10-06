@@ -8,7 +8,12 @@
 
 public class Positive2 {
     public static void main(String[] args) {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
 
+        if (a >= 0 && b >= 0) System.out.println("Báðar jákvæðar");
+        else if (a >= 0 && b < 0 || a < 0 && b >= 0) System.out.println("Önnur jákvæð");
+        else System.out.println("Hvorug jákvæð");
 
         // Það sem forritið á ekki að gera en ég hélt að ætti að gera alla helgina
         //
