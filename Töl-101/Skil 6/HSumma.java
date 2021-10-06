@@ -2,7 +2,6 @@
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Netfang: 	ttb3@hi.is
  * @ Búið til: 	2021-03-10 23:09
- * @ Klárað: 	2021-03-10 23:19
  * @ Lýsing: 	Tekur inn eina tölu sem segir til um hæð og breidd tvívíðs fylki og reiknar summu gilda í efra 
  *              hægra horni og neðra vinstri horni
  */

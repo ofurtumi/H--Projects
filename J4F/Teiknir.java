@@ -5,7 +5,7 @@ public class Teiknir {
     public static void main(String[] args) {
         StdDraw.enableDoubleBuffering();
         StdDraw.setScale(-10,10);
-        double x1 = 11.0;
+        double x1 = 11.0; 
         double x2 = 11.0;
         double y1 = 11.0;
         double y2 = 11.0;

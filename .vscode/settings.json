@@ -18,7 +18,6 @@
                 "type": "createTime",
                 "format": "\tYYYY-DD-MM HH:mm",
             },
-            "Klárað": "\tYYYY-DD-MM HH:mm",
             "Lýsing": "\t",
         }
     },

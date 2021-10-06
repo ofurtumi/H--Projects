@@ -2,7 +2,6 @@
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Netfang: 	ttb3@hi.is
  * @ Búið til: 	2021-03-10 18:24
- * @ Klárað: 	2021-03-10 23:07
  * @ Lýsing: 	Reiknar út fjölda og prósentu nemenda sem ná yfir einkunn sem tekin er inn af skipanalínu
  */
 

@@ -22,8 +22,7 @@ public class FilterOut {
         double temp = 0;
         while (s.hasNext()) {
             temp = s.nextDouble();
-            if (temp > nedri && temp < efri);
-            else out = out + temp + " ";
+            if (temp < nedri || temp > efri) out = out + temp + " ";
         }
 
         System.out.println(out);
