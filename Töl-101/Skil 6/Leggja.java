@@ -17,8 +17,8 @@ public class Leggja {
         double rad = s.nextDouble();
         double halli = Math.toRadians(s.nextInt());
 
-        double x1 = (1-1-rad+0.1*rad)*Math.cos(halli) - 0*Math.sin(halli);
-        double y1 = 0*Math.cos(halli) + (1-1-rad+0.1*rad)*Math.sin(halli);
+        double x1 = (rad-0.1*rad)*Math.cos(halli) - 0*Math.sin(halli);
+        double y1 = 0*Math.cos(halli) + (rad-0.1*rad)*Math.sin(halli);
 
         StdDraw.setScale(-1,1);
         StdDraw.setPenColor(StdDraw.RED);
