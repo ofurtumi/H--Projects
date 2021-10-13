@@ -1,37 +1,32 @@
-import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-13-10 08:27
+ * @ Lýsing: 	Reiknar út landstölur fyrir kosningar útfrá tveimur gefnum heiltölufylkjum, 
+ *              fjölda þingmanna og atkvæði
+ */
+
+import java.util.Arrays;
 
 public class Kosningar {
-    public static double[][] landstolur(int[] a, int[] t) {
-        double[][] landTOut = new double[a.length][a.length];
-
-        for (int i = 0; i < t.length; i++) {
-            for (int j = 0; j < t.length; j++) {
-                landTOut[i][j] = a[j] / (t[j]+i);
-            }
-        }
-
-        return landTOut;
-    }
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in, StandardCharsets.UTF_8);
-        int staerd = s.nextInt();
-        int[] atkvaedi = new int[staerd];
-        int[] tingmenn = new int[staerd];
+        int[] atkvaedi = {27699,44371,13519,55758,40581};
+        int[] thingmenn = {9,14,3,16,12};
         
-        int i = 0;
-        while (s.hasNext()) {
-            atkvaedi[i] = s.nextInt();
-            tingmenn[i] = s.nextInt();
+        double[][] lokatolur = landstolur(atkvaedi,thingmenn);
+        for (int i = 0; i < lokatolur.length; i++) {
+            System.out.println(Arrays.toString(lokatolur[i]));
         }
+    }
 
-        double[][] fylkiOut = landstolur(atkvaedi, tingmenn);
-        for (int j = 0;j < fylkiOut.length;j++) {
-            System.out.print("1. ");
-            for (int u = 0; u < fylkiOut[j].length; u++) {
-                System.out.print(fylkiOut[j][u]);
+    public static double[][] landstolur(int[] atkvaedi, int[] thingmenn) {
+        double[][] utkoma = new double[atkvaedi.length][thingmenn.length];
+
+        for (int i = 0; i < atkvaedi.length; i++) {
+            for (int j = 0; j < thingmenn.length; j++) {
+                utkoma[i][j] = (double)atkvaedi[j] / (thingmenn[j]+i+1);
             }
-            System.out.println();
         }
+        return utkoma;
     }
 }

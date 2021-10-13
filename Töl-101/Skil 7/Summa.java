@@ -1,3 +1,11 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-13-10 08:50
+ * @ Lýsing: 	fallið summaTveir tekur inn þrjár heiltölur og skilar boolean gildi sem er true
+ *              ef ehv tvær af þessum tölum lagðar samar mynda töluna sem er eftir, annars skilast false
+ */
+
 public class Summa {
     public static boolean summaTveir(int a, int b, int c) {
         boolean gildi = false;

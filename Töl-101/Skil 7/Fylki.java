@@ -1,3 +1,11 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-13-10 08:50
+ * @ Lýsing: 	fallið samtalaFylki tekur inn tvö heiltölufylki og skilar öðru
+ *              heiltölufylki með stökum sem eru summa inntaksfylkjanna
+ */
+
 import java.util.Arrays;
 
 public class Fylki {

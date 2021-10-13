@@ -36,10 +36,10 @@ public class Hringir {
             // if (h1 - r < x1 && h1 - r > x2 && h1 + r < x1 && h1 + r > x2) StdDraw.circle(h1, h2, r);
             // else if (h2 - r < y1 && h2 - r > y1 && h2 + r < y1 && h2 + r > y1) StdDraw.circle(h1, h2, r);
 
-            if (h1+r>x1||h1+r<x2);
-            else if (h1-r>x1||h1-r<x2);
-            else if (h2+r>y1||h2+r<y2);
-            else if (h2-r>y1||h2-r<y2);
+            if (h1+r>x2||h1+r<x1);
+            else if (h1-r>x2||h1-r<x1);
+            else if (h2+r>y2||h2+r<y1);
+            else if (h2-r>y2||h2-r<y1);
             else StdDraw.circle(h1, h2, r);
             // else {
             //     StdDraw.setPenColor(StdDraw.RED);
