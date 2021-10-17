@@ -10,12 +10,13 @@ import java.util.Arrays;
 
 public class Kosningar {
     public static void main(String[] args) {
-        int[] atkvaedi = {27699,44371,13519,55758,40581};
-        int[] thingmenn = {9,14,3,16,12};
+        int[] atkvaedi = {48708,34501,25114,19825,17672,17233,16628,10879};
+        int[] thingmenn = {16,13,6,5,6,3,3,2};
         
         double[][] lokatolur = landstolur(atkvaedi,thingmenn);
         for (int i = 0; i < lokatolur.length; i++) {
             System.out.println(Arrays.toString(lokatolur[i]));
+            System.out.println();
         }
     }
 
