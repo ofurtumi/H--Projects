@@ -11,6 +11,7 @@ public class Sulurit {
     public static void main(String[] args) {
         int[] test1 = {3, 6, 1, 5, 1, 6, 1, 1, 6, 3};
         System.out.println(Arrays.toString(tidni(test1)));
+        birta(tidni(test1));
     }
 
     /**
@@ -34,7 +35,6 @@ public class Sulurit {
             outFylki[temp-1]++;
         }
 
-        birta(outFylki);
         return outFylki;
     }
 
