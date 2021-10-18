@@ -12,6 +12,8 @@ public class Kosningar {
     public static void main(String[] args) {
         int[] atkvaedi = {48708,34501,25114,19825,17672,17233,16628,10879};
         int[] thingmenn = {16,13,6,5,6,3,3,2};
+        String[] flokkar2021 = {"D", "B", "V", "S", "G", "P", "C", "M" };
+
         
         double[][] lokatolur = landstolur(atkvaedi,thingmenn);
         for (int i = 0; i < lokatolur.length; i++) {
