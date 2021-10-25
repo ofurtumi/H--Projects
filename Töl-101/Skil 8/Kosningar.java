@@ -32,9 +32,9 @@ public class Kosningar {
      * bókstafi tilheyrandi flokka, finnur svo 9 hæstu landstölurnar og tilheyrandi flokk og skrifar 
      * flokksbókstafinn inn í strengjafylki sem er svo skilað
      * 
-     * @param double[][] l
-     * @param String[] flokkar
-     * @return String[] jafnaðarþingmenn
+     * @param double[][] tvívítt kommutölufylki sem inniheldur landstölur
+     * @param String[] einvítt strengjafylki sem inniheldur flokksbókstafi
+     * @return String[] strengjafylki sem inniheldur flokksbókstafi sem samsvara jafnaðarþingmenn
      */
     public static String[] flokkarJofnun(double[][] l, String[] flokkar) {
         int n = l.length;

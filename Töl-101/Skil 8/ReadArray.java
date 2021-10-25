@@ -26,8 +26,8 @@ public class ReadArray {
     /**
      * Les inn einvítt heiltölufylki af staðalinntaki, fyrst er lesin inn lengd fylkisins og svo jafnmörg 
      * stök og lengdin segir til um
-     * @return int[]
-     * @throws NoSuchElementException
+     * @return int[] einvítt heiltölufylki með stökum sem tekin tekin voru inn með staðalinntaki
+     * @throws NoSuchElementException ef vídd fylkis er stærri en 1
      */
     public static int[] read1DintArray() throws NoSuchElementException {
         int n = s.nextInt();
@@ -43,8 +43,8 @@ public class ReadArray {
      * Les inn tvívítt heiltölufylki af staðalinntaki, fyrst er lesin inn fjöldi raða og svo fjöldi dálka og 
      * svo röð*dálkar mörg stök 
      * 
-     * @return int[][]
-     * @throws NoSuchElementException
+     * @return int[][] tvívítt heiltölufylki sem inniheldur stök sem tekin voru inn af staðalinntaki
+     * @throws NoSuchElementException ef vídd fylkis er stærri eða minni en 2
      */
     public static int[][] read2DintArray() throws NoSuchElementException {
         int n = s.nextInt();
@@ -58,5 +58,21 @@ public class ReadArray {
         }
 
         return intOut;
+    }
+
+    /**
+     * Les inn einvítt fylki af staðalinntaki. Fyrst er víddin lesin og síðan jafnmörg stök og
+     * víddin segir til um
+     *
+     * @return skilar fylkinu
+     * @throws NoSuchElementException - ef ekki nógu mörg stök eru í staðalinntaki eða
+     *                                þau eru ekki af kommutölutagi
+     */
+    public static double[] read1DdoubleArray() throws NoSuchElementException {
+        int n = s.nextInt();
+        double[] a = new double[n];
+        for (int i = 0; i < n; i++)
+            a[i] = s.nextDouble();
+        return a;
     }
 }

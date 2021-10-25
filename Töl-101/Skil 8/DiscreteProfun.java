@@ -24,9 +24,16 @@ public class DiscreteProfun {
         System.out.println(Arrays.toString(utkoma3));
     }
 
+    /**
+     * fallið discreteLikur tekur inn kommutölufylki og heiltölu og skilar heiltölufylki af lengd n 
+     * með stök sem eru output úr Stdrandom.discrete þar sem miðað er við kommutölufylkið
+     * @param double[] likur kommutölufylki þar sem summa allra staka í fylkinu er jafnt og 1
+     * @param int n stærð fylkis sem fallið skilar
+     * @return int[] heiltölufylki með dreifingu discrete fallsins
+     */
     public static int[] discreteLikur(double[] likur, int n) {
         int[] arrayOut = new int[n];
-
+        
         for (int i = 0; i < n; i++) {
             arrayOut[i] = StdRandom.discrete(likur)+1;
         }
