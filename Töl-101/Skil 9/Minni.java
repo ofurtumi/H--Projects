@@ -9,12 +9,19 @@
 public class Minni {
     public static void main(String[] args) {
         int[] a = { 1, 2, 3, 4, 5, 6 };
-        int t = minniEn(a, 0, a.length - 1, 6);        
-        System.out.println(t); // prentast 5        
-        t = minniEn(a, 0, a.length - 1, 2);        
-        System.out.println(t); // prentast 1        
-        int t1 = minniEn(a, 0, a.length - 1, 3);        
-        System.out.println(t1);
+        int t = minniEn(a, 0, 5, 6);        
+        System.out.println("utkoma: " + t); // prentast 5        
+        t = minniEn(a, 0, 5, 2);        
+        System.out.println("utkoma: " + t); // prentast 1        
+        t = minniEn(a, 0, 5, 3);        
+        System.out.println("utkoma: " + t); // prentast 2
+
+        int[] b = {1};
+        t = minniEn(b, 0, 0, 2);
+        System.out.println("utkoma: " + t);
+
+        t = minniEn(a,4,a.length-1,6);
+        System.out.println(t);
     }   
     
 
@@ -29,16 +36,11 @@ public class Minni {
      */
     public static int minniEn(int[] a, int i, int j, int tala) {
         if (j < i) return 0;
-        int k = (i+j) >>> 1;
-        if (a[k] < tala) {
-            int fjoldi = 0;
-            for (int u = i; u < j; u++) {
-                fjoldi++;
-                // System.out.println(fjoldi);
-            }
-            if (i==j) fjoldi++;
-            return fjoldi;
-        }
-        return minniEn(a, i, k-1, tala);
+        int k = (i + j) >>> 1;
+        // System.out.println("k: "+k);
+        if (j == i && a[k] < tala) return i+1;
+        if (a[k] < tala) return minniEn(a, k+1, j, tala);
+        if (a[k] > tala) return minniEn(a, i, k-1, tala);
+        return k;
     }
 }
