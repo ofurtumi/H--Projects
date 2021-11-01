@@ -6,7 +6,6 @@
  *              skipting væri á ljósum, og main fall sem prófar tre fallið
  */
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Tre {
@@ -41,6 +40,13 @@ public class Tre {
         for (int i = 0;i < treArray5.length; i++) {
             System.out.println(Arrays.toString(treArray5[i]));
         }
+
+        // System.out.println();
+        // System.out.println("Ubertré: ");
+        // int[][] treArray6 = tre(27,0.5);
+        // for (int i = 0;i < treArray6.length; i++) {
+        //     System.out.println(Arrays.toString(treArray6[i]));
+        // }
     }
     
     /**
