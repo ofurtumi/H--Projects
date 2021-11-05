@@ -1,8 +1,8 @@
 {
     "java.project.sourcePaths": [
-        "Undirbúningur í Java",
+        ".",
         "Töl-101",
-        ""
+        "Töl-101\\Skil 10"
     ],
     "autoHeader": {
         "format": {
