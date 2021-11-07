@@ -1,4 +1,38 @@
 public class Einkunn {
+    private double maeting;
+    private int lokaprof;
+
+    public Einkunn(double m, int l) {
+        double maeting = m;
+        int lokaprof = l;
+    }
+    
+    private boolean erLoglegt(double m) {
+        if (m >= 0.0 && m <= 1.0) return true;
+        return false;
+    }
+    
+    public int getLokaprof() {
+        return lokaprof;
+    }
+    
+    public void setLokaprof(int l) {
+        this.lokaprof = l;
+    }
+    
+    public void setMaetingHlutfall(double m) {
+        if (erLoglegt(m)) this.maeting = m;
+    }
+    
+    public double getMaetingHlutfall() {
+        return maeting;
+    }
+    
+    public boolean erLagmarkseinkunn() {
+        if (lokaprof >= 5) return true;
+        return false;
+    }
+
     public static void main(String[] args) {
         Einkunn e = new Einkunn(0.5, 6);
         e.setLokaprof(3);
@@ -9,34 +43,5 @@ public class Einkunn {
 
         Einkunn e2 = new Einkunn(-0.3, 10);
         System.out.println(e2.getMaetingHlutfall());
-    }
-
-    public Einkunn(double m, int l) {
-        double maeting = m;
-        int lagmark = l;
-    }
-
-    private boolean erLoglegt(double m) {
-
-    }
-
-    public int getLokaprof() {
-
-    }
-
-    public void setLokaprof() {
-
-    }
-
-    public void setMaetingHlutfall(double m) {
-
-    }
-
-    public double getMaetingHlutfall() {
-
-    }
-
-    public boolean erLagmarkseinkunn() {
-
     }
 }
