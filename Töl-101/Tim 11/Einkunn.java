@@ -1,14 +1,15 @@
 public class Einkunn {
-    private double maeting;
+    private double maetingHlutfall ;
     private int lokaprof;
 
     public Einkunn(double m, int l) {
-        double maeting = m;
-        int lokaprof = l;
+        if (erLoglegt(m)) maetingHlutfall = m;
+        else maetingHlutfall = 0.0;
+        lokaprof = l;
     }
     
     private boolean erLoglegt(double m) {
-        if (m >= 0.0 && m <= 1.0) return true;
+        if (m > 0.0 && m <= 1.0) return true;
         return false;
     }
     
@@ -21,11 +22,11 @@ public class Einkunn {
     }
     
     public void setMaetingHlutfall(double m) {
-        if (erLoglegt(m)) this.maeting = m;
+        if (erLoglegt(m)) this.maetingHlutfall = m;
     }
     
     public double getMaetingHlutfall() {
-        return maeting;
+        return maetingHlutfall;
     }
     
     public boolean erLagmarkseinkunn() {
@@ -35,6 +36,7 @@ public class Einkunn {
 
     public static void main(String[] args) {
         Einkunn e = new Einkunn(0.5, 6);
+        System.out.println(e.getMaetingHlutfall());
         e.setLokaprof(3);
         System.out.println(e.getLokaprof());
         e.setMaetingHlutfall(2.0);
