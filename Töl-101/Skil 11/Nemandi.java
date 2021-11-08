@@ -12,6 +12,7 @@ import java.util.Objects;
 public class Nemandi {
     private String nafn;    // nafn nemanda
     private String tPostur; // tölvupóstur nemanda
+    private Einkunn einkunn; // einkunn nemanda
 
     /**
      * Smiður sem tekur inn nafn og tölvupóst nemanda
@@ -20,8 +21,28 @@ public class Nemandi {
      * @param t tölvupóstfang
      */
     public Nemandi(String n, String t) {
+        einkunn = null;
         nafn = n;
         tPostur = t;
+    }
+
+    public Nemandi(Einkunn e, String n, String t) {
+        einkunn = e;
+        nafn = n;
+        tPostur = t;
+    }
+
+    public Nemandi haerriEinkunn(Nemandi n) {
+        if (n.getEinkunn().getLokaprof() > this.einkunn.getLokaprof()) return n;
+        return this;
+    }
+
+    public Einkunn getEinkunn() {
+        return einkunn;
+    }
+
+    public void setEinkunn(Einkunn e) {
+        this.einkunn = e;
     }
 
     // gettera og settera þar ekki að skjala
@@ -77,8 +98,17 @@ public class Nemandi {
     }
     
     public static void main(String[] args) {
-        Nemandi test = new Nemandi("Tumi","thorvaldur.tumi@gmail.com");
-        System.out.println(test);
+        Nemandi n1 = new Nemandi("Bjarney", "b2@hi.is");
+        Einkunn e1 = new Einkunn(0.4, 8);
+        n1.setEinkunn(e1);
+
+        // System.out.println(e1.getLokaprof());
+        // System.out.println(n1.getEinkunn().getLokaprof());
+
+        Einkunn e2 = new Einkunn(0.5, 6);
+        Nemandi n2 = new Nemandi(e2, "Jón", "j@hi.is");
+
+        System.out.println(" nemandi með hærri einkunn er " + n1.haerriEinkunn(n2));
     }
 
 
