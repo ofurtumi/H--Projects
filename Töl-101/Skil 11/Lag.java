@@ -1,8 +1,8 @@
 public class Lag {
-    private static String titill;
-    private static String flytjandi;
-    private static int saeti;
-    private static int gamlaSaeti = 41;
+    private String titill;
+    private String flytjandi;
+    private int saeti;
+    private int gamlaSaeti = 41;
 
 
     public Lag(String t, String f) {

@@ -17,7 +17,7 @@ public class Krossgata {
         int pos2;
 
         for (int i = 0; i < n1; i++) {
-            if (s1 != s2 && s2.contains(s1.substring(i,i+1))) {
+            if (!s1.equals(s2) && s2.contains(s1.substring(i,i+1))) {
                 pos1 = i;
                 for (int j = 0; j < n2; j++) {
                     if (s1.contains(s2.substring(j,j+1))) {
