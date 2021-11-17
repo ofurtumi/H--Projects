@@ -1,9 +1,22 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-08-11 22:19
+ * @ Lýsing: 	Inniheldur nokkur föll með sína eigin javadoc lýsingu ásamt main til þess að testa klasann,
+ *              teiknar mandelbrot í litum
+ */
+
 import java.awt.Color;
 import java.util.Arrays;
 
 public class ColorBrot {
-
     // return number of iterations to check if c = a + ib is in Mandelbrot set
+    /**
+     * Skilar d fjölda af athugunum hvort c = a + ib sé Mandelbrot
+     * @param z0 complex tala
+     * @param d fjoldi endurtekninga
+     * @return d
+     */
     public static int mand(Complex z0, int d) {
         Complex z = z0;
         for (int t = 0; t < d; t++) {
@@ -13,6 +26,14 @@ public class ColorBrot {
         return d;
     }
 
+    /**
+     * Reiknar út mandelbrot útfrá gefnum skilyrðum
+     * @param s Square hlutur
+     * @param n int fjöldi endurtekninga
+     * @param iterations fjoldi aðgerða
+     * @param colors fylki af Color gerð
+     * @return skilar mynd
+     */
     public static Picture reiknaMandelBrot(Square s, int n, int iterations, Color[] colors) {
         Picture pic = new Picture(n, n);
         for (int i = 0; i < n; i++) {
@@ -27,6 +48,11 @@ public class ColorBrot {
         return pic;
     }
 
+    /**
+     * Býr til Square hlut út frá skilyrðum teknum inn úr skrá
+     * @param s Strengur með nafn á skrá
+     * @return Square hlutur
+     */
     public static Square lesaMidja(String s) {
         In in = new In(s);
         String lina = in.readLine();
@@ -35,6 +61,12 @@ public class ColorBrot {
         return new Square(Double.parseDouble(gogn[0]),Double.parseDouble(gogn[1]),Double.parseDouble(gogn[2]));
     }
 
+    /**
+     * Skilar Color fylki útfrá gögnum teknum inn af staðalinntaki
+     * @param skra String nafn á skrá
+     * @param itranir int fjöldi lita sem á að búa til
+     * @return Color fylki
+     */
     public static Color[] lesaColors(String skra, int itranir) {
         In in = new In(skra);
         Color[] colors = new Color[itranir];

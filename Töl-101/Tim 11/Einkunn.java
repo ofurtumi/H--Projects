@@ -1,3 +1,10 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-05-11 13:06
+ * @ Lýsing: 	Klasi fyrir Einkunn gagnatagið
+ */
+
 public class Einkunn {
     private double maetingHlutfall ;
     private int lokaprof;
@@ -8,6 +15,11 @@ public class Einkunn {
         lokaprof = l;
     }
     
+    /**
+     * athugar hvort mætingareinkunn sé "lögleg" þ.e. á milli 0.0 og 1.0
+     * @param m double mætingareinkunn
+     * @return true ef einkunn er lögleg annars false
+     */
     private boolean erLoglegt(double m) {
         if (m > 0.0 && m <= 1.0) return true;
         return false;
@@ -21,6 +33,10 @@ public class Einkunn {
         this.lokaprof = l;
     }
     
+    /**
+     * setur nýja mætingareinkunn ef nýja er lögleg
+     * @param m double nýja mætingareinkunn
+     */
     public void setMaetingHlutfall(double m) {
         if (erLoglegt(m)) this.maetingHlutfall = m;
     }

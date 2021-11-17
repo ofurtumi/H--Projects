@@ -1,3 +1,11 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-08-11 22:19
+ * @ Lýsing: 	Inniheldur þrjú föll og main til að testa, getur fundið sameiginlega stafi í tveimur eða
+ *              fleiri orðum eins og þyrfti fyrir krossgátur
+ */
+
 public class Krossgata {
     /**
      * Finnur hvort til er sameiginlegur bókstafur í orðunum s1 og s2
@@ -43,14 +51,6 @@ public class Krossgata {
      * þá skilar aðferðin null hlut
      */
     public static TvoOrd finnaOrd(String[] ordK) {
-        // for (String ord : ordK) {
-        //     for (int i = 0; i < ordK.length; i++) {
-        //         if (ord != ordK[i]) {
-        //             TvoOrd t = samiStafur(ord, ordK[i]);
-        //             if (t != null) return t;
-        //         }
-        //     }
-        // }
         for (int i = 0; i < ordK.length; i++) {
             TvoOrd t = finnaOrd(ordK, ordK[i]);
             if (t != null) return t;

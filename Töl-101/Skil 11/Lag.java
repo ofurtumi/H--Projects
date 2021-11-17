@@ -1,9 +1,16 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-08-11 22:19
+ * @ Lýsing: 	Gagnataksklasi Lag, inniheldur gettera, settera og toString aðferð
+ *              eina sem þarf sérstaka útskýringu er setSaetiTop40RUV sem hefur sína eigin javadoc lýsingu
+ */
+
 public class Lag {
     private String titill;
     private String flytjandi;
     private int saeti;
     private int gamlaSaeti = 41;
-
 
     public Lag(String t, String f) {
         titill = t;
@@ -14,6 +21,11 @@ public class Lag {
         return saeti;
     }
 
+    /**
+     * setur sæti lags á topp 40 listanum og skilar mimuni gamla sætisins og nýja sætisins
+     * @param s int nýtt sæti
+     * @return sætamismunur
+     */
     public int setSaetiTop40RUV(int s) {
         if (saeti >= 1) {
             gamlaSaeti = saeti;

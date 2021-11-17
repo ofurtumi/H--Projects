@@ -1,11 +1,11 @@
 /**
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Netfang: 	ttb3@hi.is
- * @ Búið til: 	2021-08-11 22:19
- * @ Lýsing: 	Klasi sem vinnur með Nemandi klasanum og sér um einkunnarutanumhald
+ * @ Búið til: 	2021-05-11 13:06
+ * @ Lýsing: 	Klasi fyrir Einkunn gagnatagið
  */
 
-public class Einkunn {
+public class Einkunn implements Comparable<Einkunn>{
     private double maetingHlutfall ;
     private int lokaprof;
 
@@ -45,29 +45,29 @@ public class Einkunn {
         return maetingHlutfall;
     }
     
-    /**
-     * athugar hvort lokaprófseinkunn sé yfir lágmarkseinkunn þ.e. 5
-     * @return true ef yfir lágmarki, annars false
-     */
     public boolean erLagmarkseinkunn() {
         if (lokaprof >= 5) return true;
         return false;
     }
 
-    public String toString() {
-        return "Einkunn{maetingHlutfall="+maetingHlutfall+", lokaprof="+lokaprof+"}";
+    public int compareTo(Einkunn o) {
+        if (lokaprof < o.getLokaprof()) return -1;
+        if (lokaprof > o.getLokaprof()) return 1;
+        if (maetingHlutfall < o.getMaetingHlutfall()) return -1;
+        if (maetingHlutfall > o.getMaetingHlutfall()) return 1;
+        return 0;
     }
 
     public static void main(String[] args) {
-        Einkunn e = new Einkunn(0.5, 6);
-        System.out.println(e.getMaetingHlutfall());
-        e.setLokaprof(3);
-        System.out.println(e.getLokaprof());
-        e.setMaetingHlutfall(2.0);
-        System.out.println(e.getMaetingHlutfall());
-        System.out.println("einkunn er fyrir ofan lágmarkseinkunn? " + e.erLagmarkseinkunn());
+        Einkunn a = new Einkunn(0.75, 8);
+        Einkunn b = new Einkunn(0.75, 9);
+        Einkunn c = new Einkunn(0.24, 4);
 
-        Einkunn e2 = new Einkunn(-0.3, 10);
-        System.out.println(e2.getMaetingHlutfall());
+        System.out.println(a.compareTo(b));
+        System.out.println(a.compareTo(c));
+        System.out.println(b.compareTo(a));
+        System.out.println(b.compareTo(c));
+        System.out.println(c.compareTo(a));
+        System.out.println(c.compareTo(b));
     }
 }
