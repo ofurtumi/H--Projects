@@ -1,3 +1,10 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-14-11 11:03
+ * @ Lýsing: 	Klasi sem heldur utan um safn af spilum, spil geta verið n mörg
+ */
+
 import java.util.Arrays;
 
 public class SpilAHendi {
@@ -23,6 +30,10 @@ public class SpilAHendi {
         }
     }
 
+    /**
+     * tekur aftasta spil úr spilArray sé spil til staðar
+     * @return Spil hlutnum sem tekin var út
+     */
     public Spil takaSpilAfHendi() {
         Spil tempSpil;
         if (spilArray[spilArray.length-1] != null) {

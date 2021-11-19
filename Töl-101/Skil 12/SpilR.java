@@ -1,3 +1,11 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-17-11 11:03
+ * @ Lýsing: 	vá þetta var erfitt,
+ *              notar comparator til þess að raða gefnum spilum í röð
+ */
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Objects;
@@ -28,9 +36,9 @@ public class SpilR {
         return Objects.hash(sort, gildi);
     }
 
-    // public String toString() {
-    //     return "sort: " + sort + ", gildi: "+ gildi;
-    // }
+    public String toString() {
+        return "sort: " + sort + ", gildi: "+ gildi;
+    }
 
 
     private class GildiComparator implements Comparator<SpilR> {
@@ -62,7 +70,7 @@ public class SpilR {
             if (i < j) return -1;
             return 0;
         }
-        
+
         private int finnaIndex(String[] s, String c) {
             for (int i = 0; i < s.length; i++) {
                 if (c.equals(s[i])) return i;

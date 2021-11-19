@@ -2,7 +2,7 @@
  * @ Höfundur: 	Þorvaldur Tumi Baldursson
  * @ Netfang: 	ttb3@hi.is
  * @ Búið til: 	2021-13-11 16:10
- * @ Lýsing: 	foobar verkefni, skilar Hæ ef tala er deilanleg með 3, Hó ef deilanleg með 5 
+ * @ Lýsing: 	fizzbuzz verkefni, skilar Hæ ef tala er deilanleg með 3, Hó ef deilanleg með 5 
  *              og Hí ef deilanleg með 7, ef deilanleg með fleiri en einni tölu skeitir strengjunum
  *              saman, ef ekki deilanleg með neinni af tölunum skilar tölunni
  *              Main fallið ýtrar frá 1 til og með 200 og prentar út 12 stök í línu
