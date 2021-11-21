@@ -1,8 +1,21 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-21-11 17:35
+ * @ Lýsing: 	inniheldur fallið tekk, sem hefur sína eigin javadoc lýsingu og main fall sem kallar einu sinni á tekk
+ */
+
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tekk {
+
+    /**
+     * Tekur inn streng af staðalinntaki, splittar honum til þess að hægt sé að vinna með hann sem fylki
+     * telur hversu mörg stök eru í fylkinu, ef stak er "missti" telur það líka telur það fjölda "missti"
+     * strengja í röð til þess að hægt sé að sjá hvort réttu mynsturfari sé fylgt
+     * @return fjölda kúnna og "Gölluð" ef mynsturfar er rangt
+     */
     public static String tekk() {
         Scanner s = new Scanner(System.in,StandardCharsets.UTF_8);
         String tempString = "";
