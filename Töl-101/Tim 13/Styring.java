@@ -1,4 +1,4 @@
-public class Styring {
+public class Styring implements StyringSkil{
     private boolean taekid;
 
     public void kveikja() {
