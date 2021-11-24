@@ -1,14 +1,19 @@
+import java.io.Console;
 import java.util.Arrays;
 
 public class Test {
     public static void main(String[] args) {
-        int[] a = {6,5,4,3,2};
-        int[] b = {2,3,4,5,6};
-        int i = 1;
-        int j = 2;
-        int c = a[i++] + b[--i] + b[j++] + a[i + j++];
-        System.out.println(c);
-        System.out.println(i);
-        System.out.println(j);
+        String[][] a;
+        String[][] b = new String[2][3];
+
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                b[i][j] = ""+i+j;
+            }
+        }
+
+        a = b;
+        System.out.println(Arrays.deepToString(b));
+        System.out.println(Arrays.deepToString(a));
     }
 }
