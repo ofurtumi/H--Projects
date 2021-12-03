@@ -1,19 +1,13 @@
-import java.io.Console;
-import java.util.Arrays;
-
 public class Test {
     public static void main(String[] args) {
-        String[][] a;
-        String[][] b = new String[2][3];
+        String upphafs = args[0];
+        int n = upphafs.length();
+        String loka = "";
 
-        for (int i = 0; i < b.length; i++) {
-            for (int j = 0; j < b[i].length; j++) {
-                b[i][j] = ""+i+j;
-            }
+        for (int i = 0; i < n; i++) {
+            loka = loka + upphafs.charAt(n-1-i);
         }
-
-        a = b;
-        System.out.println(Arrays.deepToString(b));
-        System.out.println(Arrays.deepToString(a));
+        int lokaOut = Integer.parseInt(loka);
+        System.out.println(lokaOut);
     }
 }
