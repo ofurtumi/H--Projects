@@ -16,3 +16,15 @@
 - (int)10.25+7.98) == 17.98
 - (int)10.25+(int)7.98) == 17
 - (int)(10.25+7.98) == 18
+
+## switch ritháttur
+´´´java
+switch (key) {
+    case value:
+        function();
+        break;
+
+    default:
+        break;
+}
+´´´
