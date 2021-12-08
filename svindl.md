@@ -7,10 +7,9 @@
 | .min(a,b)/max(a,b) | skila stærra/minna gildinu |
 | .exp(a) | skilar e í veldi a |
 | .pow(a,b) | skilar a í veldi b |
-| .random() | skilar ranom tölu frá og með 0 að 1 |
+| .random() | skilar random tölu frá og með 0 að 1 |
 | .sqrt(a) | skilar rót af a |
-### Math fastar
-| --- | --- |
+| Math fastar | ca. gildi |
 | .E | 2.178... |
 | .PI | 3.141... |
 
@@ -49,6 +48,17 @@ syntax fyrir scanner væri:
 
 til að fá ótilgreindan fjölda af gögnum inn, nota 
 
-    while(s.hasNext())
+    while(s.hasNext());
 
+## printf
+printf er lúmskur djöfull en kósý þegar notaður vel
+| tags | meining |
+| --- | --- |
+| %d | skiptir út fyrir *int* |
+| %f | skiptir út fyrir *float* eða *double* |
+| %.3f | --||-- nema notar bara *3 aukastafi*, og ***námundar þann síðasta*** |
+| %4.3f | --||-- nema *heildarbreidd* tölunnar er *4*|
 
+## almenn stærðfræði
+það er ekki reiknað alveg í þeirri röð sem búast mætti við en gott að hafa á bak við eyrað er:
+> ef x\*y/z\*n þá er það jafnt og ((x\*y)/z)\*n
