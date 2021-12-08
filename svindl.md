@@ -18,13 +18,21 @@
 - (int)(10.25+7.98) == 18
 
 ## switch ritháttur
-´´´java
-switch (key) {
-    case value:
-        function();
-        break;
 
-    default:
-        break;
-}
-´´´
+    switch (key) {
+        case value:
+            function();
+            break;
+
+        default:
+            break;
+    }
+
+## hækkun/lækkun breyta
+innanlínu breytivirkjar, ++ og -- eru pain, látum i = 5
+- System.out.printf("i fyrir hækkun: %d, i eftir hækkun: %d",i++,i)
+    - þetta skilar: i fyrir hækkun: 5, i eftir hækkun 6 
+    - i skilar gildinu 5 og hækkar svo því ++ er eftir i
+- System.out.printf("i fyrir hækkun: %d, i eftir hækkun: %d",i,++i)
+    - þetta skilar því sama, vegna þess að hér er ++ á undan i
+- þetta virkar svo alveg eins með --

@@ -1,12 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-        switch (key) {
-            case value:
-                function();
-                break;
-        
-            default:
-                break;
-        }
+        int i = 5;
+        System.out.printf("i fyrir hækkun: %d, i eftir hækkun: %d",i,++i);
     }
 }
