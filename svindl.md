@@ -56,9 +56,9 @@ printf er lúmskur djöfull en kósý þegar notaður vel
 | --- | --- |
 | %d | skiptir út fyrir *int* |
 | %f | skiptir út fyrir *float* eða *double* |
-| %.3f | --||-- nema notar bara *3 aukastafi*, og ***námundar þann síðasta*** |
-| %4.3f | --||-- nema *heildarbreidd* tölunnar er *4*|
+| %.3f | sama og fyrir ofan nema notar bara *3 aukastafi*, og ***námundar þann síðasta*** |
+| %4.3f | sama og fyrir ofan nema *heildarbreidd* tölunnar er *4*|
 
 ## almenn stærðfræði
 það er ekki reiknað alveg í þeirri röð sem búast mætti við en gott að hafa á bak við eyrað er:
-> ef x\*y/z\*n þá er það jafnt og ((x\*y)/z)\*n
+**ef x\*y/z\*n þá er það jafnt og ((x\*y)/z)\*n**
