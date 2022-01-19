@@ -27,7 +27,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "stdlib.jar",
-        "libs/stdlib.jar"
+        "libs/stdlib.jar",
+        "libs/algs4.jar"
     ]
 }
 
