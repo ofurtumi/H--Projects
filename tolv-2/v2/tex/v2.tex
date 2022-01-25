@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+
+
+\graphicspath{ {./} }
+\title{Heimadæmi 2 - Tölv 2}
+\author{ttb3@hi.is}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{1}
+\subsection*{c)}
+$\frac{(N+1)(N+2)}{N^2} => \frac{N²+3N+2}{N²} => \frac{N²}{N²} => 1$
+
+\subsection*{d)}
+$2N³$
+
+\subsection*{e)}
+$\frac{lg(2N)}{lg(N)} => \frac{lg(N)+lg(2)}{lg(N)} => \frac{lg(N)}{lg(N)} => 1$
+
+\subsection*{f)}
+Ekki hugmynd spyrja í dæmatíma
+
+\section*{2}
+\subsection*{a)}
+Línuleg þróun:
+
+$f(N) = (N+\frac{N}{2}+\frac{N}{4}+\frac{N}{8}+...)$
+
+\subsection*{b)}
+
+$f(N) = (1+2+4+8+...+\frac{N}{2})$
+
+\section*{4}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        N&sums&time&ratio&lg ratio\\
+        \hline
+        100&0&0.007s&-&-\\
+        \hline
+        200&0&0.011s&1.54&0.65\\
+        \hline
+        400&0&0.054s&4.9&2.3\\
+        \hline
+        800&84&0.582s&10.77&3.43\\
+        \hline
+        1600&455&4.65s&8&3\\
+        \hline
+        3200&3276&37.15s&8&3\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{document}
