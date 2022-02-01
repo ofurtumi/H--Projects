@@ -15,19 +15,19 @@ public class CountReps {
     public static int countReps(int[] a) {
         Arrays.sort(a);
         int rep = 0;
-        int reference = a.length > 0 ? a[0]:0;
-        int refNR = 0;
+        int reference = a.length > 0 ? a[0]:0; // ef a er tómt, ekki reyna að finna fyrsta stak
+        int refReps = 0;
         int i = 1;
     
         while (i < a.length) {
             if (a[i] == reference) {
-                refNR++;
+                refReps++;
             }
-            else if (refNR > 0) {
-                refNR++;
-                rep += (refNR*(refNR-1))/2;
+            else if (refReps > 0) {
+                refReps++;
+                rep += (refReps*(refReps-1))*0.5;
                 reference = a[i];
-                refNR = 0;
+                refReps = 0;
             }
             else {
                 reference = a[i];
@@ -35,9 +35,9 @@ public class CountReps {
             i++;
         }
 
-        if (refNR != 0) {
-            refNR++;
-            rep += (refNR*(refNR-1))/2;
+        if (refReps != 0) {
+            refReps++;
+            rep += (refReps*(refReps-1))*0.5;
         }
         // if (a.length > 2 && a[0] == a[1]) rep++;
         return rep;

@@ -6,7 +6,7 @@ public class ThreeSum {
         int N = Integer.parseInt(args[0]);
         int a[] = new int[N];
         for (int i = 0; i < a.length; i++) {
-            a[i] = StdRandom.uniform(0, 101);
+            a[i] = StdRandom.uniform(-50, 51);
         }
         int cnt = 0;
         Stopwatch s = new Stopwatch();

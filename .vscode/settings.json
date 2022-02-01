@@ -1,8 +1,14 @@
+/**
+ * @ Höfundur: 	Þorvaldur Tumi Baldursson
+ * @ Netfang: 	ttb3@hi.is
+ * @ Búið til: 	2021-20-12 11:16
+ * @ Lýsing: 	
+ */
+
 {
     "java.project.sourcePaths": [
         ".",
-        "Töl-101",
-        "Töl-101\\Skil 10"
+        "Töl-101"
     ],
     "autoHeader": {
         "format": {
@@ -22,7 +28,13 @@
         }
     },
     "files.exclude": {
-        "**/*.class": true
+        "**/*.class": true,
+        "**/*.synctex.gz": true,
+        "**/*.log": true,
+        "**/*.aux": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
+        "**/_minted-*": true
     },
     "java.project.referencedLibraries": [
         "lib/**/*.jar",

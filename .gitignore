@@ -1,1 +1,7 @@
 **/*.class
+**/*.synctex.gz
+**/*.log
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/_minted-*
