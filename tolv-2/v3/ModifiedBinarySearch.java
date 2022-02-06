@@ -23,10 +23,12 @@ public class ModifiedBinarySearch {
         int[] a = {1,2,3,4,4,5,5,6,6,7};
         int[] b = {1,2,3,4,5,6,7};
         int[] c = {4};
+        int[] d = {};
         int key = 4;
         System.out.println("Runnar");
         System.out.println(indexOf(b, key));
         System.out.println(indexOf(a, key));
         System.out.println(indexOf(c, key));
+        System.out.println(indexOf(d, key));
     }
 }
