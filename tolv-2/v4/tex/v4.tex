@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+\usepackage[dvipsnames]{xcolor}
+
+\graphicspath{ {./} }
+\title{Vikublað 4 - TÖL203G}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+
+\section*{2.1.8}
+Þar sem versti tími fyrir insertion sort er $O(n²)$ og besti tími, 
+þar sem þarf ekkert að inserta, er tíminn $O(n)$, getur fylki þar sem stökum er raðað 
+handahófskennt verið annaðhvort þeirra eða á milli, það skiptir ekki máli hversu margar tegundir 
+af stökum eru til staðar í fylkinu
+
+\section*{2.2.2}
+\begin{center}
+    $a[]$\\
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        &0&1&2&3&4&5&6&7&8&9&10&11\\
+        \hline
+        &E&A&S&Y&Q&U&E&S&T&I&O&N\\
+        \hline
+        merge(a,0,1,1)&\textcolor{red}{A}&\textcolor{red}{E}&S&Y&Q&U&E&S&T&I&O&N\\
+        \hline
+        merge(a,2,2,3)&E&A&\textcolor{red}{S}&\textcolor{red}{Y}&Q&U&E&S&T&I&O&N\\
+        \hline
+        merge(a,0,1,3)&\textcolor{red}{A}&\textcolor{red}{E}&\textcolor{red}{S}&\textcolor{red}{Y}&Q&U&E&S&T&I&O&N\\
+        \hline
+        merge(a,4,4,5)&A&E&S&Y&\textcolor{red}{Q}&\textcolor{red}{U}&E&S&T&I&O&N\\
+        \hline
+        merge(a,6,6,7)&A&E&S&Y&Q&U&\textcolor{red}{E}&\textcolor{red}{S}&T&I&O&N\\
+        \hline
+        merge(a,4,5,7)&A&E&S&Y&\textcolor{red}{E}&\textcolor{red}{Q}&\textcolor{red}{S}&\textcolor{red}{U}&T&I&O&N\\
+        \hline
+        merge(a,0,3,7)&\textcolor{red}{A}&\textcolor{red}{E}&\textcolor{red}{E}&\textcolor{red}{Q}&\textcolor{red}{S}&\textcolor{red}{S}&\textcolor{red}{U}&\textcolor{red}{Y}&T&I&O&N\\
+        \hline
+        merge(a,8,8,9)&A&E&E&Q&S&S&U&Y&\textcolor{red}{I}&\textcolor{red}{T}&O&N\\
+        \hline
+        merge(a,8,8,9)&A&E&E&Q&S&S&U&Y&I&T&\textcolor{red}{N}&\textcolor{red}{O}\\
+        \hline
+        merge(a,10,10,11)&A&E&E&Q&S&S&U&Y&\textcolor{red}{I}&\textcolor{red}{N}&\textcolor{red}{O}&\textcolor{red}{T}\\
+        \hline
+        merge(a,0,7,11)&\textcolor{red}{A}&\textcolor{red}{E}&\textcolor{red}{E}&\textcolor{red}{I}&\textcolor{red}{N}&\textcolor{red}{O}&\textcolor{red}{Q}&\textcolor{red}{S}&\textcolor{red}{S}&\textcolor{red}{T}&\textcolor{red}{U}&\textcolor{red}{Y}\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section*{2.2.22}
+fyrir "venjulegt" merge sort, þar sem skipt er í tvennt í byrjun, 
+er tíminn $O(n\log_2(n))$, 
+þegar skipt er í þrennt breytist $\log_2$ yfir í $\log_3$
+Tímaflækjan verður þannig $O(n\log_3(n))$.
+
+\end{document}
