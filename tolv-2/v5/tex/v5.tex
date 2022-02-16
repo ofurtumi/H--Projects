@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+
+
+\graphicspath{ {./} }
+\title{Vikublað 5 - Tölv-2}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section*{2.3.4}
+Byrjum með tölurnar $[1,2,3,4,5,6,7,8,9,10]$, fylkið er ekki sorterað þannig $1$ verður viðmiðsstak
+\begin{align*}
+    [1,\underline{2},3,4,5,6,7,8,9,\underline{10}]\\
+    <--------\\
+    \text{leitar alla leið að lo og finnur ekkert sem er minna en 2}\\
+    [1,2,\underline{3},4,5,6,7,8,9,\underline{10}]\\
+    <-------\\
+    \text{þarf aftur að endurtaka sama skref nema núna er lo = 3}\\
+    \text{þar sem tölunum er nú þegar raðað í röð má sjá að}\\
+    \text{þetta endurtekur sig fyrir öll stök}\\
+    [1,2,3,4,5,6,7,8,\underline{9},\underline{10}]\\
+    <-\\
+    \text{þetta er síðasta skrefið nú er leitað frá 10 að 9}\\
+    \text{ekkert finnst og lykkjan brotnar}
+\end{align*}
+þá má skoða þessar aðgerðir útfrá fjölda staka athugum að fyrsta aðgerðin þar sem $lo=2$ og $hi=10$ eru framdar 9 samanburðir, þ.e. $(n-1)$ samanburðir.
+fyrir næsta skref er $lo=3$ en $hi=10$ ennþá því það skipti aldrei um stað, núna eru framkvæmdir 8 samanburðir, $(n-2)$.
+Þessi tala heldur áfram að minnka þangað til í síðasta skrefinu þar sem $lo=9$ og $hi=10$ og framkæmd er aðeins 1 samanburður, $n-9$.
+Þá er fjöldi samanburða = $\sum_{i=1}^{n-1}(n-i)$ sem er einfaldlega jafnt og $45$ þetta gengur upp þar sem versti mögulegi tími er $\sim\frac{n^2}{2}$
+
+
+Svipað dæmi um versta tíma væri með tölunum $[10,9,8,7,6,5,4,3,2,1]$,
+hérna er í rauninni sama dæmi í gangi nema bara öfugt þannig ég tek bara eitt sýnidæmi.
+Viðmiðsstak í þessu dæmi er 10 þar sem það er fremsta stakið.
+\begin{align*}
+    [10,\underline{9},8,7,6,5,4,3,2&,\underline{1}]\\
+    ------>&\\
+    \text{finnur strax stak sem er minna en 10}\\ 
+    \text{en getur ekki fyrir sitt litla líf fundið stak sem er stærra en 10}
+\end{align*}
+Nú lendum við í sama veseni og undan, þ.e. að við þurfum að framkvæma $\sum_{i=1}^{n-1}(n-i)$ samanburði, og eins og við vitum eru það $45$ samanburðir sem eru $\sim\frac{n^2}{2}$ og uppfylla þannig skilyrðin.
+
+\end{document}
