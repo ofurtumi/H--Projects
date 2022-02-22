@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[icelandic]{babel}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{mathtools}
@@ -51,4 +52,15 @@ Viðmiðsstak í þessu dæmi er 10 þar sem það er fremsta stakið.
 \end{align*}
 Nú lendum við í sama veseni og undan, þ.e. að við þurfum að framkvæma $\sum_{i=1}^{n-1}(n-i)$ samanburði, og eins og við vitum eru það $45$ samanburðir sem eru $\sim\frac{n^2}{2}$ og uppfylla þannig skilyrðin.
 
+
+\section*{2.3.24}
+okok er ekki alveg viss um að ég skilji þetta en here goes.
+Ef ég er með fylki með tölum frá $1-16$ raðað í röð, notum bara $[11,5,2,15,3,16,7,13,1,4,12,9,6,10,14,8]$, 
+og $k=3$ þá þarf fyrst að velja af handahófi $2^3-1$ tölur til að fara í minna fylki.
+Ég vel $7$ tölur: $[5,2,7,1,6,10,14]$ og raða þeim innbyrðis og fæ út $[1,2,5,6,7,10,14]$ svo nota ég $6$ sem skiptistak því það er í miðjunni eftir röðun.
+Þá eftir að hafa notað $6$ sem skiptistak í upphaflega fylkinu fæ ég út $[5,2,3,1,4,\underline{6},11,15,16,7,13,12,9,10,14,8]$.
+Næst tek ég miðjustakið í bæði vinstra og hægra hlutfylki skiptifylkisins og fæ vinstra megin $2$ og hægra megin $10$. 
+Þau eru notuð sem skiptistök á upphaflega fylkið og ég fæ: $[1,\underline{2},5,3,4,6,11,15,16,7,13,12,9,10,14,8]$ og svo $[1,2,5,3,4,6,7,9,8,\underline{10},11,15,16,13,12,14]$,
+Þetta er svo endurtekið einu sinni enn, eða fjórum sinnum eftir því hvernig þú horfir á það, þar sem $1$,$5$,$7$ og $14$ eru notuð sem skiptistök. 
+Ég tek það saman í eitt og maður endar með: $[1,2,3,4,5,6,7,9,8,10,11,13,12,14,15,16]$ næstum alveg raðað fylki, einu sem eru off eru 9 og 8 og 13 og 12.
 \end{document}
