@@ -9,7 +9,7 @@
 | .pow(a,b) | skilar a í veldi b |
 | .random() | skilar random tölu frá og með 0 að 1 |
 | .sqrt(a) | skilar rót af a |
-|---|---|
+| --- | --- |
 | Math fastar | ca. gildi |
 | .E | 2.178... |
 | .PI | 3.141... |
