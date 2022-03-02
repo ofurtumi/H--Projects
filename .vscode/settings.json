@@ -6,10 +6,6 @@
  */
 
 {
-    "java.project.sourcePaths": [
-        ".",
-        "Töl-101"
-    ],
     "autoHeader": {
         "format": {
             "startWith": "/**",
