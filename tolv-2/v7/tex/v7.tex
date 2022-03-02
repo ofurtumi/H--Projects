@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+
+
+\graphicspath{ {./} }
+\title{Vikublað 7 - Tölv 2}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+
+\section*{3.2.4}
+\subsection*{a)}
+a tréð er gefið sem $[10,9,8,7,6,5,4]$
+
+a gengur upp, ef maður fylgir trénu sést að $10 > 9 > 8 > ... > 5$, þannig maður fylgir bara vinstri greinum trésins þangað til að maður lendir á 5
+
+\subsection*{b)}
+b tréð er gefið sem $[4,10,8,7,5,3]$
+
+nú byrjar maður á $4$, 
+þar sem $4<5$ er eina leiðin til að finna $5$ að fara til hægri, 
+það er gert þegar farið er á $10$, 
+næsta tékk er $10>8$ þannig farið er til vinstri. 
+Eins og er gengur þetta upp,
+haldið er áfram að fara eftir vinstri hlið trésins þangað til að komið er að $5$,
+næst í röðinni á eftir $5$ er $3$ en það gengur ekki upp því $3<4$ og ætti þessvegna að vera á vinstri grein frá rótinni og ekki fyrir neðan $5$.
+Þá má sjá að b er röð aðferða sem gengur ekki upp.
+
+\subsection*{c)}
+c tréð er gefið sem $[1,10,2,9,3,8,4,7,6,5]$
+
+hérna skilar röð aðferða tré sem sikksakkar, byrjar á hægri,vinstri,hægri
+þangað til að komið er að $6$ þá fer maður aftur til vinstri og lendir á $5$,
+rétt gildi fundið, allir glaðir :)
+
+\subsection*{d)}
+d tréð er gefið sem $[2,7,3,8,4,5]$
+
+hérna er tré sem ekki gengur upp, það fer frá $2$ til hægri í $7$ og frá $7$
+vinstri til $3$ en svo hættir gamanið því það ætti að fara frá $3$ til hægri á $8$
+nema hvað að $8>7$ þannig það ætti ekki að geta átt heima í vinstra hluttré $7$
+
+d virkar ekki
+
+\subsection*{e)}
+e tréð er gefið sem $[1,2,10,4,8,5]$
+
+röð aðferða verður hægri, hægri, vinstri, hægri, vinstri.
+það gengur upp
+
+\section*{3.2.15}
+ritháttur:\\
+$Y\rightarrow X$ = fara til hægri frá Y og lenda á X \\$Y\leftarrow X$ = fara til vinstri frá Y og lenda á X
+\subsection*{a)}
+floor("Q"), leitar að Q og skilar minnsta stakinu sem finnst á leiðinni\\
+$E>Q:E\rightarrow Q$ þ.e. vegna þess að E er stærra en Q, fara frá E til hægri og lenda á Q. 
+þar sem að Q er það sem leitað var að, skilar Q
+
+\end{document}
