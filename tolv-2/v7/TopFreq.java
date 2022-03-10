@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.print.DocFlavor.STRING;
-
 import edu.princeton.cs.algs4.ST;
 
 public class TopFreq {
@@ -87,8 +85,8 @@ public class TopFreq {
         Scanner s = new Scanner(System.in, "utf-8");
 
         Stopwatch time = new Stopwatch();
-        ArrayImp(s, k, N);
-        // HashImp(s, k, N);
+        // ArrayImp(s, k, N);
+        HashImp(s, k, N);
         double elapsed = time.elapsedTime();
         System.out.println(elapsed);
 

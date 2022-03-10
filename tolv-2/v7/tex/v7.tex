@@ -7,6 +7,29 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{minted}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 
 
 \graphicspath{ {./} }
@@ -66,5 +89,149 @@ $Y\rightarrow X$ = fara til hægri frá Y og lenda á X \\$Y\leftarrow X$ = fara
 floor("Q"), leitar að Q og skilar minnsta stakinu sem finnst á leiðinni\\
 $E>Q:E\rightarrow Q$ þ.e. vegna þess að E er stærra en Q, fara frá E til hægri og lenda á Q. 
 þar sem að Q er það sem leitað var að, skilar Q
+
+\subsection*{b)}
+fer og athugar rank vinstra hluttrésins, 
+það er $2$ þannig þá á að leita í hægra hluttrénu að staki með rank $5-2-1$,
+tékkað á rank $Q$ það er $2$ og þá er skilað $Q$\\
+$rank(E)<5:E\rightarrow Q, rank(Q)==2$ 
+
+\subsection*{c)}
+voða svipað og a), nema skilar stærsta staki á leið þess að finna stak,
+$E>Q:\rightarrow Q$ skilar $Q$
+
+\subsection*{d)}
+$E>J:\rightarrow Q, Q<J:\leftarrow J, rank(j)==0$ skilar $0$
+
+\subsection*{e)}
+$E<D\leftarrow D$ telur 1 fyrir rót og 1 fyrir það að lágpunktur fundinn, 
+fara aftur á rót $E>Q:\rightarrow Q$, Q talin, 
+$Q\leftarrow J, J\rightarrow M$ J og M talin, 
+aftur í Q rót, $Q\rightarrow T$ T talið, $T\leftarrow S$ því S er minna en T, S talið, hápunktur fundinn
+
+\newpage
+\section*{TopFreq}
+skrifaði main fall sem tekur inn k, lágmarksfjölda stafa orðs, 
+N, fjölda orða sem á að birta
+og notar scanner til að taka orð inn af staðalinntaki.
+Það notar Stopwatch til þess að mæla tímann á föllunum og maður velur á milli þeirra með því að commenta út það kall á fall sem ekki á við.
+
+\subsection*{MAIN}
+\begin{lstlisting}
+    public static void main(String[] args) {
+        int k = Integer.parseInt(args[0]);
+        int N = Integer.parseInt(args[1]);
+
+        Scanner s = new Scanner(System.in, "utf-8");
+
+        Stopwatch time = new Stopwatch();
+        ArrayImp(s, k, N);
+        // HashImp(s, k, N);
+        double elapsed = time.elapsedTime();
+        System.out.println(elapsed);
+
+        // ahugaverd og einfold utfaersla a thessu ollu:
+        // cat tale.txt | tr " " "\n" | sort | uniq -c | sort -nr | head -100 | less
+    }
+\end{lstlisting}
+\newpage
+\subsection*{ArrayImp, A)}
+array útfærslan notast við arraylist til þess að taka inn orð af staðalinntaki,
+sortar fylkið og ítrar yfir það til telja endurtekningar. 
+það er svo haldið utan um endurtekin orð með því að skrifa orðið inn í eitt fylki
+og fjölda endurtekninga í annað. 
+ef orð er endurtekið oftar en ehv orð sem er í geymslufylkjunum, er minna orðið yfirskrifað.
+vegna þess hvernig er farið yfir geymslufylkin endar maður með minnkandi listas af
+endurteknum orðum.
+\begin{lstlisting}
+    public static void ArrayImp(Scanner s, int k, int N) {
+        List<String> words = new ArrayList<String>(); 
+        while (s.hasNext()) {
+            String word = s.next();
+            if (word.length() >= k) { 
+                words.add(word);
+            }
+        }
+        s.close();
+        String[] wordsArray = new String[words.size()];
+        wordsArray = words.toArray(wordsArray);
+        Arrays.sort(wordsArray);
+        int counter = 1;
+        int[] fjoldi = new int[N];
+        String[] ord = new String[N];
+        for (int i = 1; i < wordsArray.length; i++) { 
+            if (wordsArray[i].equals(wordsArray[i - 1]))
+                counter++; 
+            else {
+                for (int j = 0; j < ord.length; j++) {
+                    if (fjoldi[j] < counter) { 
+                        fjoldi[j] = counter; 
+                        ord[j] = wordsArray[i - 1]; 
+                        break;
+                    }
+                }
+                counter = 1;
+            }
+        }
+        for (int i = 0; i < ord.length; i++) {
+            StdOut.println(ord[i] + " " + fjoldi[i]);
+        }
+    }
+\end{lstlisting}
+
+\newpage
+\subsection*{HashImp, B)}
+breytti útfærslunni úr bókinni varla nema til að nota scanner og geta kallað á það úr main
+\begin{lstlisting}
+    public static void HashImp(Scanner s, int k, int N) {
+        ST<String, Integer> st = new ST<String, Integer>();
+        while (s.hasNext()) { 
+            String word = s.next();
+            if (word.length() < k)
+                continue;
+            if (!st.contains(word))
+                st.put(word, 1);
+            else
+                st.put(word, st.get(word) + 1);
+        }
+        for (int i = 0; i < N; i++) {
+            String max = "";
+            st.put(max, 0);
+            for (String word : st.keys())
+                if (st.get(word) > st.get(max))
+                    max = word;
+            StdOut.println(max + " " + st.get(max));
+            st.delete(max);
+        }
+    }
+\end{lstlisting}
+
+\subsection*{TÍMAR!!}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        nr. keyrslu&A&B\\
+        \hline
+        nr.1&0.159s&0.189s\\
+        \hline
+        nr.2&0.147s&0.212s\\
+        \hline
+        nr.3&0.165s&0.190s\\
+        \hline
+        nr.4&0.147s&0.220s\\
+        \hline
+        nr.5&0.163s&0.214s\\
+        \hline
+        meðaltal:&0.156s&0.205s\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\section*{3.2.21}
+\begin{lstlisting}
+    public static BST randomKey(BST x) {
+        return select(StdRandom.uniform(x.size()));
+    }
+\end{lstlisting}
 
 \end{document}
