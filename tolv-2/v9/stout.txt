@@ -1,0 +1,43 @@
+RBBST:      0.203
+RBBST:      0.219
+RBBST:      0.219
+RBBST:      0.221
+RBBST:      0.230
+RBBST:      0.223
+RBBST:      0.217
+RBBST:      0.224
+RBBST:      0.215
+RBBST:      0.203
+
+BST:        0.189
+BST:        0.188
+BST:        0.185
+BST:        0.211
+BST:        0.204
+BST:        0.199
+BST:        0.202
+BST:        0.201
+BST:        0.199
+BST:        0.198
+
+SCHST:      0.170
+SCHST:      0.171
+SCHST:      0.197
+SCHST:      0.183
+SCHST:      0.193
+SCHST:      0.175
+SCHST:      0.174
+SCHST:      0.176
+SCHST:      0.182
+SCHST:      0.190
+
+LPHST:      0.147
+LPHST:      0.157
+LPHST:      0.155
+LPHST:      0.150
+LPHST:      0.161
+LPHST:      0.152
+LPHST:      0.163
+LPHST:      0.201
+LPHST:      0.154
+LPHST:      0.160

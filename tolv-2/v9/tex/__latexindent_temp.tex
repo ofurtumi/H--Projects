@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\graphicspath{ {./} }
+\title{Titill - Áfangi}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+
+\section*{3.4.4}
+\begin{lstlisting}
+    tolur = [83,69,65,82,67,72,88,77,80,76]
+
+outTolur = []
+M = 9
+while (True):
+    M+=1
+    print(M)
+    for a in range(1,1000000):
+        for k in tolur:
+            outTolur.append((a*k)%M)
+        if(len(set(outTolur))==10): break
+        outTolur = []
+    if(len(set(outTolur))==10): break
+
+print('outSet',set(outTolur))
+print('outTolur',outTolur)
+print('a',a)
+print('M',M)
+\end{lstlisting}
+
+
+\end{document}
