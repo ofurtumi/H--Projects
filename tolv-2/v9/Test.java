@@ -27,5 +27,5 @@ public class Test {
             double t = time.elapsedTime();
             System.out.printf("BST time: %.3f\n",t);
         }
-    }    
+    }
 }

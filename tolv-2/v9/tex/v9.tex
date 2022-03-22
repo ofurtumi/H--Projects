@@ -34,7 +34,7 @@
 
 
 \graphicspath{ {./} }
-\title{Titill - Áfangi}
+\title{Verkefni 9 - Tölvunarfræði 2}
 \author{ttb3@hi.is}
 \date{\today}
 
@@ -124,7 +124,80 @@ Allar aðgerðir framkvæmdar 10 sinnum
     \hline
 \end{tabular}
 
+
+\lstset{frame=tb,
+  language=java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
 \section*{3. 3.4.31}
 
+\subsection*{put}
+\begin{lstlisting}
+    ...
+    Key tempKey = null;
+        Value tempVal = null;
+
+        int keyH1 = key.hashCode();
+
+        if (keys[0][keyH1] != null) {
+            tempKey = keys[0][keyH1];
+            tempVal = vals[0][keyH1];
+            vals[0][keyH1] = val;
+        } else {
+            keys[0][keyH1] = key;
+            vals[0][keyH1] = val;
+        }
+
+        if ((tempKey != null) && (keys[1][tempKey.hashCode()] != null)) {
+            vals[1][tempKey.hashCode()] = tempVal;
+            Key tTempKey = keys[1][tempKey.hashCode()];
+            Value tTempVal = vals[1][tempKey.hashCode()];
+            put(tTempKey, tTempVal);
+        }
+        else {
+            keys[1][tempKey.hashCode()] = tempKey;
+            vals[1][tempKey.hashCode()] = tempVal;
+        }
+    }
+\end{lstlisting}
+
+\subsection*{get}
+\begin{lstlisting}
+    public Value get(Key key) {
+        if (key == null)
+            throw new IllegalArgumentException("argument to get() is null");
+        long h = murmurhash(key.hashCode(), 42);
+        int h1 = ((int) (h & 0x7fffffff)) % m;
+        int h2 = ((int) ((h >> 32) & 0x7fffffff)) % m;
+        if (h > h1) return vals[1][(int)h];
+        else return vals[0][(int)h];
+    }
+\end{lstlisting}
+
+\section*{4. 4.1.4}
+Til að finna út hvort vegur liggi á milli tveggja hnúta í óstefndu neti þarf bara að athuga hvort það sé tenging á milli þeirra.
+Graph hefur poka af pokum sem halda utan um tengingar hvers og eins hnútar. 
+Þar sem þessi gögn eru auðveldlega sótt er málið einfaldlega að tékka á hvort hnútur V sem er tekinn inn hafi hnút W í pokanum sínum.
+
+\begin{lstlisting}
+    public boolean hasEdge(int V, int W) {
+        for (int node : adj(v)) {
+            if (node.equals(w)) return true;
+        }
+        return false;
+    }
+\end{lstlisting}
 
 \end{document}

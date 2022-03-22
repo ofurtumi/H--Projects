@@ -87,20 +87,37 @@ public class CuckooST<Key, Value> {
         if (key == null)
             throw new IllegalArgumentException("first argument to put() is null");
         if (val == null) {
-            delete(key);
+            // delete(key);
             return;
         }
         if (n > (0.8 * m)) {
             resize(2 * m);
         }
-        long i;
-        for (i = murmurhash(key.hashCode(), 42); keys[(int)i] != null; i = (i+1)%m) {
-            if (keys[(int)i].equals(key)) {
-                vals[(int)i][(int)i] = val;
-            }
+
+        Key tempKey = null;
+        Value tempVal = null;
+
+        int keyH1 = key.hashCode();
+
+        if (keys[0][keyH1] != null) {
+            tempKey = keys[0][keyH1];
+            tempVal = vals[0][keyH1];
+            vals[0][keyH1] = val;
+        } else {
+            keys[0][keyH1] = key;
+            vals[0][keyH1] = val;
         }
-        // long i = murmurhash(key.hashCode(), 42);
-        
+
+        if ((tempKey != null) && (keys[1][tempKey.hashCode()] != null)) {
+            vals[1][tempKey.hashCode()] = tempVal;
+            Key tTempKey = keys[1][tempKey.hashCode()];
+            Value tTempVal = vals[1][tempKey.hashCode()];
+            put(tTempKey, tTempVal);
+        }
+        else {
+            keys[1][tempKey.hashCode()] = tempKey;
+            vals[1][tempKey.hashCode()] = tempVal;
+        }
     }
 
     public Value get(Key key) {
@@ -109,7 +126,8 @@ public class CuckooST<Key, Value> {
         long h = murmurhash(key.hashCode(), 42);
         int h1 = ((int) (h & 0x7fffffff)) % m;
         int h2 = ((int) ((h >> 32) & 0x7fffffff)) % m;
-        // ...
+        if (h > h1) return vals[1][(int)h];
+        else return vals[0][(int)h];
     }
 
     public Iterable<Key> keys() {
