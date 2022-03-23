@@ -35,41 +35,38 @@ public class GraphProperties {
 
     public int diameter() {
         int longestP = 0;
-        int[] longestV = {-1,-1};
+        int longestV = -1;
 
         for (int i = 0; i < vert; i++) {
-            DepthFirstPaths d = new DepthFirstPaths(G, i);
-            for (int j = 0; j < vert; j++) {
-                int cnt = 0;
-
-                if (d.pathTo(j) != null) cnt = LOI(d.pathTo(j));
-                if (cnt > longestP) {
-                    longestP = cnt;
-                    longestV[0] = i;
-                    longestV[1] = j;
-                }
+            int ecc = eccentricity(i);
+            if (longestP < ecc) {
+                longestP = ecc;
+                longestV = i;
             }
         }
 
-        if (longestV[0] != -1) return longestP;
+        if (longestV != -1)
+            return longestP;
         return -1;
     }
 
     public int radius() {
-        int cnt = 99999;
+        int shortestP = eccentricity(0);
         for (int i = 0; i < vert; i++) {
-            int temp = eccentricity(i);
-            if (temp < cnt) cnt = temp;
+            int ecc = eccentricity(i);
+            if (ecc < shortestP) {  
+                shortestP = ecc;
+            }
         }
 
-        if (cnt != 99999) return cnt;
-        return -1;
+        return shortestP;
     }
 
     public int center() {
         int rad = radius();
         for (int i = 0; i < vert; i++) {
-            if (eccentricity(i) == rad) return i;
+            if (eccentricity(i) == rad)
+                return i;
         }
         return -1;
     }
@@ -92,9 +89,9 @@ public class GraphProperties {
     public static void main(String[] args) {
         SymbolGraph sg = new SymbolGraph(args[0], args[1]);
         GraphProperties G = new GraphProperties(sg.graph());
-        System.out.println("G.eccentricity(0) --> " + G.eccentricity(0));
-        System.out.println("G.radius() --> " + G.radius());
+        System.out.println("G.eccentricity(5) --> " + G.eccentricity(5));
         System.out.println("G.diameter() --> " + G.diameter());
-
+        System.out.println("G.radius() --> " + G.radius());
+        System.out.println("G.center() --> " + G.center());
     }
 }
