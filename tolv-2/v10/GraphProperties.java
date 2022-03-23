@@ -2,24 +2,21 @@ import edu.princeton.cs.algs4.*;
 
 public class GraphProperties {
     private Graph G;
-    private int vert; // fjöldi hnúta í neti svo þurfi ekki að athuga fyrir hverja aðgerð
 
     GraphProperties(Graph G) {
         this.G = G;
-        this.vert = G.V();
     }
 
     public int eccentricity(int V) {
-        DepthFirstPaths d = new DepthFirstPaths(G, V);
         BreadthFirstPaths b = new BreadthFirstPaths(G, V);
         int longestP = 0;
         int longestV = -1;
 
-        for (int i = 0; i < vert; i++) {
+        for (int i = 0; i < G.V(); i++) {
             int cnt = 0;
 
-            if (d.pathTo(i) != null)
-                cnt = LOI(d.pathTo(i));
+            if (b.pathTo(i) != null)
+                cnt = LOI(b.pathTo(i));
 
             if (cnt > longestP) {
                 longestP = cnt;
@@ -30,14 +27,14 @@ public class GraphProperties {
         if (longestV != -1)
             return LOI(b.pathTo(longestV));
 
-        return longestV;
+        return 0;
     }
 
     public int diameter() {
         int longestP = 0;
         int longestV = -1;
 
-        for (int i = 0; i < vert; i++) {
+        for (int i = 0; i < G.V(); i++) {
             int ecc = eccentricity(i);
             if (longestP < ecc) {
                 longestP = ecc;
@@ -47,24 +44,29 @@ public class GraphProperties {
 
         if (longestV != -1)
             return longestP;
-        return -1;
+        return 0;
     }
 
     public int radius() {
-        int shortestP = eccentricity(0);
-        for (int i = 0; i < vert; i++) {
+        int shortestP = Integer.MAX_VALUE;
+        int shortestV = -1;
+
+        for (int i = 0; i < G.V(); i++) {
             int ecc = eccentricity(i);
-            if (ecc < shortestP) {  
+            if (shortestP > ecc) {
                 shortestP = ecc;
+                shortestV = i;
             }
         }
 
-        return shortestP;
+        if (shortestV != -1)
+            return shortestP;
+        return 0;
     }
 
     public int center() {
         int rad = radius();
-        for (int i = 0; i < vert; i++) {
+        for (int i = 0; i < G.V(); i++) {
             if (eccentricity(i) == rad)
                 return i;
         }

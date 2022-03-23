@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{minted}
+\usepackage{listings}
 
 
 \graphicspath{ {./} }
@@ -17,7 +18,6 @@
 
 \begin{document}
 \maketitle
-
 
 \section*{4.1.14}
 BFS notar \emph{queue} til að geyma upplýsingar um hnúta sem búið er að skoða.
@@ -74,5 +74,53 @@ Sjáið núna muninn ef við notum \emph{stack} en ekki \emph{queue}:
     \end{tabular}
 \end{center}
 Sama niðurstaða og við fengjum með DFS, þannig tldr. ef við notum \emph{stack} í stað \emph{queue} í BFS er ekki hægt að fá stystu leið því við erum í raun bara að nota DFS.
+
+\section*{Bacon Tala}
+Forritið sem ég gerði notast við DegreesOfSeperation forritið sem gefið er í bókinni. Það skilar veginum auk Bacon tölunar, hér eru Bacon tölur allra leikaranna í Glengarry Glen Ross:
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Leikari&Bacon Tala\\
+        \hline
+        Al Pacino&2\\
+        \hline
+        Jack Lemmon&1\\
+        \hline
+        Alec Baldwin&1\\
+        \hline
+        Ed Harris&1\\
+        \hline
+        Kevin Spacey&2\\
+        \hline
+        Alan Arkin&2\\
+        \hline
+        Jonathan Pryce&2\\
+        \hline
+        Jude Ciccolella&2\\
+        \hline
+        Lori Tan Chinn&2\\
+        \hline
+        Bruce Altman&2\\
+        \hline
+        Leigh French&2\\
+        \hline
+        George Cheung&2\\
+        \hline
+        Neal Jones&2\\
+        \hline
+        Murphy Dunne&2\\
+        \hline
+        Dana Lee&2\\
+        \hline
+        Gregory Snegoff&2\\
+        \hline
+        Julie Payne&2\\
+        \hline
+        Diane Dreyer&2\\
+        \hline
+        Paul Butler&1\\
+        \hline
+    \end{tabular}
+\end{center}
 
 \end{document}
