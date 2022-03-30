@@ -1,57 +1,65 @@
+import java.util.Hashtable;
+
 import edu.princeton.cs.algs4.*;
 
 public class GraphArithmetic {
-    // daemi
-    // inn: calculate(dg,vv);
-    // thar sem:
-    // String[] values = {"+","3","2","1"};
-    // Digraph dg = new Digraph(4);
-    // dg.addEdge(0,1);
-    // dg.addEdge(0,2);
-    // dg.addEdge(0,3);
-    // ut: 6.0
+
+    private static Hashtable<Integer, Double> HT = new Hashtable<>();
+    // ! nauðsynlegt fyrir fibonacci
+    // ? heldur utan um reiknuð gildi
+
     public static double calculate(Digraph dg, String[] vertexValues) {
-        partition(0, dg, vertexValues);
-        return 0.0;
+        HT.clear();
+
+        // * sá hnútur sem á að skila, eini sem er með indegree = 0
+        int retVert = 0;
+        for (int i = 0; i < dg.V(); i++) {
+            if (dg.indegree(i) == 0) {
+                retVert = i;
+                break;
+            }
+        }
+
+        // * byrja recursion frá hnút sem var fundinn
+        return partition(retVert, dg, vertexValues);
     }
 
     private static double partition(int n, Digraph dg, String[] values) {
+        // ! nauðsynlegt fyrir fibonacci
+        // ? ef reiknað gildi á hnút n er til skila því, sleppa öllu hinu
+        if (HT.containsKey(n))
+            return HT.get(n);
+
         double out = 0;
-        double[] vals = new double[2];
-        if (dg.outdegree(n) != 0) {
+        double[] vals = new double[dg.outdegree(n)];
+
+        if (vals.length > 0) { // * er hnútur lauf?
             int cnt = 0;
             for (int i : dg.adj(n)) {
                 vals[cnt++] = partition(i, dg, values);
+                HT.put(i, vals[cnt - 1]);
             }
 
             switch (values[n]) {
                 case "+":
-                    return vals[0]+vals[1];
-                case "-":
-                    return vals[0]-vals[1];
+                    for (int i = 0; i < vals.length; i++) {
+                        out += vals[i];
+                    }
+                    break;
                 case "*":
-                    return vals[0]*vals[1];
-                case "/":
-                    return vals[0]/vals[1];
+                    out = 1;
+                    for (int i = 0; i < vals.length; i++) {
+                        out *= vals[i];
+                    }
+                    break;
                 default:
                     break;
             }
-        }
-        return Integer.parseInt(values[n]);
-    }
 
-    private static String visualize(int n, Digraph dg, String[] values) {
-        String out = "";
-        if (dg.outdegree(n) != 0) {
-            int cnt = 0;
-            for (int i : dg.adj(n)) {
-                out += visualize(i, dg, values);
-                cnt++;
-                if (cnt == 1) out += values[n];
-            }
+            HT.put(n, out);
             return out;
         }
-        return values[n];
+        return Double.parseDouble(values[n]); // * þessi er bara fyrir lauf
     }
 
     public static void main(String[] args) {
@@ -66,17 +74,9 @@ public class GraphArithmetic {
         dg.addEdge(3, 7);
         dg.addEdge(4, 7);
         dg.addEdge(4, 8);
-        String[] values = { "*", "*", "+", "+", "*", "-1", "4", "5", "2" }; // 720.0
+        String[] values = { "*", "*", "+", "+", "*", "-1", "4", "5", "2" }; // 729.0
 
-        // Digraph dg = new Digraph(3);
-        // dg.addEdge(0, 1);
-        // dg.addEdge(0, 2);
-        // String[] values = { "*", "5", "2" };
-
-        System.out.println("dg.toString() --> " + dg.toString());
-        GraphArithmetic.calculate(dg, values);
-
-        System.out.println("visualize(dg,values) --> " + visualize(0, dg, values));
+        System.out.println("calculate(dg, values) --> " + calculate(dg, values));
+        System.out.println("HT.toString() --> " + HT.toString());
     }
-
 }
