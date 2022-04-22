@@ -39,7 +39,6 @@ public class GraphArithmetic {
                 vals[cnt++] = partition(i, dg, values);
                 HT.put(i, vals[cnt - 1]);
             }
-
             switch (values[n]) {
                 case "+":
                     for (int i = 0; i < vals.length; i++) {

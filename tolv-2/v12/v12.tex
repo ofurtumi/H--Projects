@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[icelandic]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{minted}
+\usepackage{tikz}
+
+
+\graphicspath{ {./} }
+\title{Titill - Áfangi}
+\author{ttb3@hi.is}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section*{4.3.6}
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (13.2,-14.9) circle (3);
+    \draw (13.2,-14.9) node {$4$};
+    \draw [black] (32.9,-14.4) circle (3);
+    \draw (32.9,-14.4) node {$5$};
+    \draw [black] (45.7,-14.9) circle (3);
+    \draw (45.7,-14.9) node {$1$};
+    \draw [black] (63.5,-16.9) circle (3);
+    \draw (63.5,-16.9) node {$3$};
+    \draw [black] (60.7,-34.2) circle (3);
+    \draw (60.7,-34.2) node {$2$};
+    \draw [black] (34.5,-37.5) circle (3);
+    \draw (34.5,-37.5) node {$0$};
+    \draw [black] (64.5,-49) circle (3);
+    \draw (64.5,-49) node {$6$};
+    \draw [black] (16.2,-14.82) -- (29.9,-14.48);
+    \fill [black] (29.9,-14.48) -- (29.09,-14) -- (29.11,-15);
+    \draw [black] (35.9,-14.52) -- (42.7,-14.78);
+    \fill [black] (42.7,-14.78) -- (41.92,-14.25) -- (41.88,-15.25);
+    \draw [black] (48.68,-15.23) -- (60.52,-16.57);
+    \fill [black] (60.52,-16.57) -- (59.78,-15.98) -- (59.67,-16.97);
+    \draw [black] (63.02,-19.86) -- (61.18,-31.24);
+    \fill [black] (61.18,-31.24) -- (61.8,-30.53) -- (60.81,-30.37);
+    \draw [black] (37.48,-37.13) -- (57.72,-34.57);
+    \fill [black] (57.72,-34.57) -- (56.87,-34.18) -- (56.99,-35.17);
+    \draw [black] (57.72,-34.57) -- (37.48,-37.13);
+    \fill [black] (37.48,-37.13) -- (38.33,-37.52) -- (38.21,-36.53);
+    \draw [black] (61.45,-37.11) -- (63.75,-46.09);
+    \fill [black] (63.75,-46.09) -- (64.04,-45.2) -- (63.07,-45.44);
+    \end{tikzpicture}
+    \end{center}
+
+
+\section*{4.3.4}
+Vigtað net hefur einstakt MST \underline{aðeins} ef allar stikur eru ólíkar. -Sanna eða sýna mótdæmi\\
+$P<==>Q$
+
+\section*{4.3.13}
+Gefðu mótdæmi: til að hrekja eftirfarandi MST reiknirit:
+
+Byrjaðu í hvaða hnúti sem er, sem 1-hnúts MST. Bættu svo V-1 stikum við tréð, þar sem næsta stika er minnsta stikan sem liggur að nýjasta hnútnum í trénu
+
+\section*{4.3.26}
+Gefðu eftirfarandi reiknirit:\\
+inn: Net G\\
+út: Allar "krítískar stikur" í MST(G)\\
+Krítísk stika.: Stika e er krítísk MST(g) ef |MST(G-e)| > |MST(G)|
+\end{document}
