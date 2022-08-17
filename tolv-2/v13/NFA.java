@@ -16,12 +16,16 @@ public class NFA {
                 ops.push(i);
             else if (re[i] == ')') {
                 int or = ops.pop();
-                if (re[or] == '|') {
-                    lp = ops.pop();
-                    G.addEdge(lp, or + 1);
-                    G.addEdge(or, i);
-                } else
-                    lp = or;
+                int svig = or;
+                while (re[svig] != ')') {
+                    if (re[svig] == '|') {
+                        lp = ops.pop();
+                        G.addEdge(lp, or + 1);
+                        G.addEdge(or, i);
+                        svig--;
+                    }
+                }
+                lp = or;
             }
             if (i < M - 1 && re[i + 1] == '*') // lookahead
             {
@@ -31,9 +35,5 @@ public class NFA {
             if (re[i] == '(' || re[i] == '*' || re[i] == ')')
                 G.addEdge(i, i + 1);
         }
-    }
-
-    public boolean recognizes(String txt) {
-        // Does the NFA recognize txt? (See page 799.)
     }
 }
